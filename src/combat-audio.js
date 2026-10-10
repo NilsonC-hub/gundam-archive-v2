@@ -9,12 +9,12 @@ export function createCombatAudio({ onState = () => {} } = {}) {
   async function preload() {
     if (loading) return loading;
     loading = (async () => {
-      const response = await fetch('/audio/sources.json', { signal: AbortSignal.timeout(6000) });
+      const response = await fetch(`${import.meta.env.BASE_URL}audio/sources.json`, { signal: AbortSignal.timeout(6000) });
       if (!response.ok) throw new Error('Audio manifest could not be loaded');
       manifest = await response.json();
       await Promise.all(['shot', 'impact', 'shatter'].map(async name => {
         if (!manifest[name]?.url) return;
-        const file = await fetch(manifest[name].url, { signal: AbortSignal.timeout(6000) });
+        const file = await fetch(`${import.meta.env.BASE_URL}${manifest[name].url.replace(/^\/+/, '')}`,  { signal: AbortSignal.timeout(6000) });
         if (!file.ok) throw new Error(`Audio file could not be loaded: ${name}`);
         encoded.set(name, await file.arrayBuffer());
       }));

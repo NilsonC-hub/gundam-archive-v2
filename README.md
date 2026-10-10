@@ -4,6 +4,8 @@
 
 本仓库提供 V2 单版及其运行资源，可独立获取和启动。
 
+[直接打开网站](https://nilsonc-hub.github.io/gundam-archive-v2/)
+
 ## 运行
 
 需要 Node.js 22.12 或更高版本，也兼容 Node.js 20.19 系列。首次在项目目录执行：
@@ -18,7 +20,7 @@ npm run preview
 
 Windows 也可双击 `打开设计样板.cmd`。该入口需要已完成构建、已安装 Python 3，并且 `python` 命令可用；会复用已启动的本项目服务。修改源文件后，重新运行 `npm run build`。
 
-构建输出 `dist`、依赖和缓存由本地生成，不上传仓库。项目按网站根路径运行；GitHub 仓库地址是源码页面，目前未启用 GitHub Pages。
+构建输出 `dist`、依赖和缓存由本地生成，不上传仓库。GitHub Actions 会在网站文件更新后自动构建并发布至 GitHub Pages。资源使用相对路径，本地根地址与线上仓库子路径均可运行。
 
 ## 交互与画面
 

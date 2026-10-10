@@ -169,7 +169,7 @@ try {
   }).observe(stage);
 
   const loader = new GLTFLoader();
-  loader.load('/models/rx79g-tactical.glb', (gltf) => {
+  loader.load(`${import.meta.env.BASE_URL}models/rx79g-tactical.glb`, (gltf) => {
     model = gltf.scene;
     mixer = new THREE.AnimationMixer(model);
     const combatClip = gltf.animations.find(c => c.name === 'Combat sequence');

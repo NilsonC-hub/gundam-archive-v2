@@ -50,7 +50,7 @@ export function createGlassImpact({ host, reducedMotion, onImpact, onShatter, ca
   const damageContext = damage.getContext('2d');
   const texture = new Image();
   texture.decoding = 'async';
-  texture.src = '/effects/glass-puncture.png';
+  texture.src = `${import.meta.env.BASE_URL}effects/glass-puncture.png`;
   let width = 0, height = 0, dpr = 1;
   let hits = [], chips = [], cells = [], edges = [];
   let pane = null, phase = 'idle', time = 0, thirdAt = null;
