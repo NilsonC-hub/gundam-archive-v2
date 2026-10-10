@@ -1,0 +1,26 @@
+node_modules/
+dist/
+*.log
+.env
+.env.*
+!.env.example
+.vite/
+.playwright-cli/
+test-results/
+playwright-report/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+
+# Local comparison, source motions and historical validation remain on disk.
+/public/original/
+/public/compare.html
+/打开新旧对照.cmd
+/work/
+/Firing Rifle.fbx
+/Rifle Kneel To Aim.fbx
+/Rifle Side Step.fbx
+/Sword And Shield Block.fbx
+/public/models/rx79g.glb
+/public/model-info.json

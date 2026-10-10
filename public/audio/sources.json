@@ -1,0 +1,50 @@
+{
+  "shot": {
+    "url": "/audio/rifle-shot.mp3",
+    "volume": 0.72,
+    "offset": 0.024,
+    "duration": 2.66932,
+    "source": "https://freesound.org/people/kyles/sounds/450853/",
+    "download": "https://cdn.freesound.org/previews/450/450853_612689-hq.mp3",
+    "title": "gun lee enfield 303 rifle clean shot.wav",
+    "author": "kyles",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceType": "Existing rifle recording, sourced from Freesound; not generated for this project.",
+    "processing": "HQ preview unchanged. Playback skips 24 ms of lead-in; no pitch shift or synthesis.",
+    "measuredPeakDb": -0.66,
+    "attackSeconds": 0.027
+  },
+  "impact": {
+    "url": "/audio/glass-impact.mp3",
+    "volume": 1.0,
+    "offset": 0,
+    "duration": 0.19293,
+    "source": "https://freesound.org/people/JohanDeecke/sounds/368339/",
+    "download": "https://cdn.freesound.org/previews/368/368339_6758928-hq.mp3",
+    "title": "Glass Hit (29).wav",
+    "author": "JohanDeecke",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "sourceType": "Studio recording of breaking glass. Author lists Shure SM7B / Sennheiser MHK416 and no processing.",
+    "processing": "HQ preview unchanged; playback volume only.",
+    "measuredPeakDb": -11.48,
+    "attackSeconds": 0.0008
+  },
+  "shatter": {
+    "url": "/audio/glass-shatter.mp3",
+    "volume": 0.86,
+    "offset": 0.008,
+    "duration": 1.41252,
+    "source": "https://freesound.org/people/C_Rogers/sounds/203375/",
+    "download": "https://cdn.freesound.org/previews/203/203375_3569783-hq.mp3",
+    "title": "glass-shattering_01.ogg",
+    "author": "C_Rogers",
+    "license": "CC0 1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceType": "Existing glass-breaking sound from the author's Breaking Glass Sounds pack; not generated for this project.",
+    "processing": "HQ preview unchanged. Playback skips 8 ms of lead-in; no pitch shift or synthesis.",
+    "measuredPeakDb": -1.71,
+    "attackSeconds": 0.0132
+  }
+}

@@ -1,0 +1,298 @@
+/* The poster and its controls share one viewport; the archive gets a reading scale. */
+:root {
+  --reading-ink: #454d46;
+  --caption-ink: #596159;
+}
+
+html { scrollbar-color: #757d75 var(--paper); }
+a { text-underline-offset: .2em; }
+button:focus-visible, a:focus-visible, [tabindex]:focus-visible { outline-color: #2447b8; }
+.header-caption { font-size: 12px; letter-spacing: 1px; }
+nav { font-size: 12px; gap: 28px; }
+
+.hero {
+  --view-bar: 80px;
+  --motion-bar: 72px;
+  --control-area: calc(var(--view-bar) + var(--motion-bar));
+  height: calc(100svh - 88px);
+  min-height: 0;
+  max-height: 1100px;
+  overflow: clip;
+  grid-template-rows: 22px auto minmax(14px, 1fr) auto calc(var(--control-area) + 18px);
+}
+.hero h1 {
+  font-size: clamp(46px, min(5.15vw, 8cqh), 88px);
+  letter-spacing: -.04em;
+  margin: 20px 0 14px;
+}
+.hero-description { font-size: 14px; line-height: 1.8; letter-spacing: .3px; }
+.hero .eyebrow { font-size: 11px; }
+.poster-type {
+  font-size: clamp(104px, min(13.7vw, 22cqh), 222px);
+  letter-spacing: -.025em;
+  line-height: .78;
+}
+.poster-type > span + span { margin-top: 8px; }
+.hero::before { bottom: var(--control-area); }
+.hero-grid { bottom: calc(var(--control-area) + 14px); }
+.red-cut { bottom: var(--control-area); height: auto; }
+.scene { inset: 0 8% calc(var(--control-area) + 40px) 27%; }
+.side-label { bottom: calc(var(--control-area) + 70px); }
+.stage-caption {
+  left: auto;
+  right: 12%;
+  bottom: calc(var(--control-area) + 14px);
+  font-size: 11px;
+  gap: 7px;
+  padding: 5px 8px;
+}
+.stage-caption-rule { width: 20px; margin-inline: 3px; }
+.crosshair-b { bottom: calc(var(--control-area) + 70px); }
+
+.hero > .motion-strip {
+  position: absolute;
+  inset: auto 0 var(--view-bar);
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 174px;
+  align-items: center;
+  gap: 18px;
+  height: var(--motion-bar);
+  min-height: 0;
+  padding: 10px 3.4%;
+}
+.motion-title { gap: 10px; font-size: 12px; }
+.motion-title small { font-size: 8px; color: #c6ccc3; }
+.motion-line { width: 18px; height: 26px; flex: 0 0 auto; }
+.motion-buttons { flex-wrap: nowrap; gap: 7px; min-width: 0; }
+.motion-buttons button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-color: #a0a79e;
+  font-size: 12px;
+  line-height: 1.4;
+}
+.motion-buttons [data-motion="still"] { opacity: 1; }
+.motion-feedback { min-width: 0; gap: 1px; }
+.motion-feedback .motion-indicator { font-size: 11px; letter-spacing: .3px; color: #c6ccc3; }
+.motion-feedback .motion-indicator.playing { color: #ff9c8b; }
+.combat-sound { font-size: 12px; color: #eeede8; min-height: 26px; padding: 3px 0; }
+.combat-sound[aria-pressed="false"] { opacity: 1; color: #c6ccc3; }
+.motion-pending { font-size: 12px; color: #c6ccc3; }
+
+.controls { height: var(--view-bar); border-top: 0; }
+.control-heading, .utility-controls button { font-size: 12px; }
+.control-heading small { color: var(--caption-ink); }
+.view-controls { gap: 24px; }
+.view-buttons button { min-height: 44px; padding: 12px 17px; }
+.view-buttons small { font-size: 10px; opacity: .8; }
+.utility-controls { gap: 17px; }
+.utility-controls button { min-height: 44px; }
+.utility-controls .square-button { width: 36px; padding: 0; }
+.utility-controls .reset-button { min-width: 48px; justify-content: center; padding: 10px 8px; border: 1px solid #90988e; }
+#clear-impact { font-size: 12px; min-height: 24px; padding-block: 3px; }
+
+.dossier-heading > p:not(.eyebrow) { font-size: 14px; color: #d3d8d0; letter-spacing: .3px; }
+.dossier .eyebrow { font-size: 11px; color: #d3d8d0; }
+.image-note { font-size: 12px; color: #c2ccc3; }
+.dossier-footer { height: 64px; font-size: 11px; letter-spacing: .5px; color: #e1e6de; }
+.dossier-footer > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  font: 13px var(--body);
+  color: var(--paper);
+  pointer-events: auto;
+  text-decoration: underline;
+  text-decoration-color: #eeede880;
+}
+.dossier-footer > a:hover { text-decoration-color: var(--paper); }
+
+.chronicle { gap: 7%; grid-template-columns: minmax(260px, .74fr) minmax(0, 1.36fr); }
+.chronicle .eyebrow, .chapter-kicker { font-size: 12px; }
+.chronicle-intro { font-size: 15px; line-height: 1.9; color: var(--reading-ink); }
+.unit-record > div { font-size: 12px; line-height: 1.8; padding-block: 17px; }
+.unit-record dt { color: var(--caption-ink); }
+.chapter-tabs button { min-height: 52px; font-size: 14px; }
+.chapter-tabs small { font-size: 11px; color: var(--caption-ink); }
+.chapter-panel { padding-top: 32px; }
+.chapter-kicker { color: #ad271e; letter-spacing: .6px; }
+.chapter-panel h3 { font-size: 29px; letter-spacing: -.025em; line-height: 1.45; }
+.chapter-panel > p:not(.chapter-kicker):not(.chapter-reference) {
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--reading-ink);
+  max-width: 68ch;
+  margin-bottom: 20px;
+}
+.chapter-sequence p, .weapon-record dd, .team-record dd, .person-entry p, .aftermath-note p {
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--reading-ink);
+}
+.chapter-sequence > div { padding-block: 18px; }
+.weapon-record > div, .team-record > div { grid-template-columns: 140px minmax(0, 1fr); padding-block: 18px; }
+.weapon-record dt, .team-record dt { font-size: 14px; }
+.weapon-record dt strong span { font-size: 11px; }
+.team-record dd span { font-size: 12px; color: #ad271e; }
+.person-entry > span { font-size: 12px; color: #ad271e; }
+.person-entry h4 { font-size: 17px; }
+.person-entry h4 small { font-size: 11px; color: var(--caption-ink); }
+.chapter-reference { font-size: 12px; line-height: 2; color: var(--caption-ink); }
+.chapter-reference a { display: inline-block; color: #394437; padding-block: 4px; }
+.inspect-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  min-height: 38px;
+  gap: 18px;
+  margin-top: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: #929b8e;
+}
+.inspect-link:hover { color: #ad271e; text-decoration-color: currentColor; }
+.footer { font-size: 12px; line-height: 1.9; gap: 20px; }
+.footer > a, .footer a { font-size: 12px; }
+
+@media (min-width: 701px) and (max-width: 1100px) {
+  .header-caption { display: none; }
+  .hero { --view-bar: 78px; --motion-bar: 96px; }
+  .hero > .motion-strip { grid-template-columns: 106px minmax(0, 1fr); gap: 4px 14px; padding-block: 8px; }
+  .motion-buttons button { padding-inline: 12px; }
+  .motion-feedback { grid-column: 2; display: flex; justify-content: space-between; flex-basis: auto; min-height: 22px; }
+  .motion-feedback .motion-indicator { font-size: 11px; }
+  .combat-sound { min-height: 22px; }
+  .scene { left: 24%; right: 5%; }
+  .stage-caption { right: 7%; font-size: 10px; }
+  .stage-caption-rule { display: none; }
+  .view-controls { gap: 13px; }
+  .view-buttons button { padding-inline: 12px; }
+  .utility-controls { gap: 10px; }
+  .chronicle { gap: 5%; grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr); }
+  .weapon-record > div, .team-record > div { grid-template-columns: 104px minmax(0, 1fr); gap: 16px; }
+}
+
+@media (min-width: 701px) and (max-width: 860px) {
+  .hero { --view-bar: 106px; }
+  .controls { flex-direction: column; justify-content: center; align-items: stretch; gap: 1px; }
+  .view-controls, .utility-controls { justify-content: space-between; }
+  .control-heading small { display: none; }
+  .utility-controls { border-top: 1px solid var(--rule); }
+  .stage-caption > span:nth-of-type(4) { display: none; }
+}
+
+@media (max-width: 760px) {
+  .chronicle { grid-template-columns: minmax(0, 1fr); gap: 38px; }
+  .chronicle-intro { font-size: 14px; }
+  .unit-record { max-width: none; }
+  .chapter-tabs button { min-height: 58px; font-size: 13px; }
+  .chapter-tabs small { font-size: 11px; }
+  .chapter-panel { min-height: 0; }
+  .chapter-panel h3 { font-size: 26px; }
+  .chapter-panel > p:not(.chapter-kicker):not(.chapter-reference) { font-size: 14px; }
+  .chapter-sequence > div { grid-template-columns: 76px minmax(0, 1fr); gap: 14px; }
+  .weapon-record > div, .team-record > div { grid-template-columns: 94px minmax(0, 1fr); gap: 14px; }
+  .person-entry { grid-template-columns: 43px minmax(0, 1fr); gap: 14px; }
+  .person-entry h4 small { display: block; margin: 7px 0 0; }
+  .chapter-reference a { margin-left: 9px; }
+}
+
+@media (max-width: 700px) {
+  .header { height: 70px; }
+  nav { font-size: 12px; gap: 17px; }
+  nav a { padding-block: 16px; }
+  .hero {
+    --view-bar: 106px;
+    --motion-bar: 142px;
+    height: calc(100svh - 70px);
+    min-height: 0;
+    max-height: none;
+    display: block;
+  }
+  .hero-copy { position: absolute; top: 20px; left: 6%; margin: 0; }
+  .hero .eyebrow { font-size: 10px; gap: 6px; }
+  .hero h1 { font-size: clamp(36px, 10.5vw, 48px); margin: 17px 0 12px; line-height: 1.13; }
+  .hero-description { max-width: 190px; font-size: 12px; line-height: 1.75; }
+  .poster-type {
+    position: absolute;
+    left: 5%;
+    bottom: calc(var(--control-area) + 17px);
+    margin: 0;
+    font-size: clamp(78px, 23.8vw, 116px);
+  }
+  .poster-type > span + span { margin-top: 5px; }
+  .scene { left: 0; right: 0; top: 116px; bottom: calc(var(--control-area) + 22px); }
+  .hero::before { inset: 90px 0 var(--control-area); }
+  .red-cut { top: 55px; left: 68%; }
+  .side-label { top: 27px; bottom: auto; }
+  .crosshair-a { top: 190px; }
+  .stage-caption { bottom: calc(var(--control-area) + 5px); right: 5%; font-size: 9px; gap: 5px; padding: 4px 6px; }
+  .stage-caption > span:nth-of-type(4) { display: none; }
+  #clear-impact { font-size: 11px; min-height: 24px; padding-left: 6px; }
+  .hero > .motion-strip {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 20px 82px;
+    align-content: center;
+    gap: 6px 10px;
+    padding: 10px 5%;
+  }
+  .motion-title { grid-column: 1; font-size: 12px; gap: 7px; }
+  .motion-title small { display: none; }
+  .motion-line { height: 15px; width: 13px; }
+  .motion-buttons { grid-row: 2; grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+  .motion-buttons button { min-height: 38px; padding: 7px 8px; font-size: 12px; }
+  .motion-feedback { grid-row: 1; grid-column: 2; display: flex; gap: 10px; align-items: center; justify-content: flex-end; flex-basis: auto; min-height: 20px; }
+  .motion-feedback .motion-indicator { font-size: 10px; max-width: 130px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .combat-sound { min-height: 24px; font-size: 12px; padding: 0; }
+  .controls { flex-direction: column; justify-content: center; align-items: stretch; gap: 1px; }
+  .view-controls { justify-content: space-between; gap: 8px; }
+  .control-heading { font-size: 12px; }
+  .control-heading small { display: none; }
+  .view-buttons { gap: 3px; }
+  .view-buttons button { min-height: 43px; padding: 10px 12px; font-size: 12px; }
+  .view-buttons small { font-size: 10px; margin-right: 4px; }
+  .utility-controls { display: grid; grid-template-columns: 1fr 1.45fr 36px 36px 48px; gap: 4px; padding-top: 3px; }
+  .utility-controls button { justify-content: center; min-height: 43px; padding: 0; gap: 5px; font-size: 12px; }
+  .utility-controls .control-separator { display: none; }
+  .utility-controls .square-button { width: 36px; font-size: 21px; }
+  .utility-controls .reset-button { min-width: 0; min-height: 35px; align-self: center; padding: 5px; }
+  .dossier-heading { top: 42px; }
+  .dossier .eyebrow { font-size: 9px; }
+  .dossier-heading > p:not(.eyebrow) { font-size: 14px; max-width: 270px; }
+  .image-note { font-size: 12px; margin-top: 24px; }
+  .dossier-footer { font-size: 10px; height: 66px; letter-spacing: .1px; gap: 22px; }
+  .dossier-footer > span:first-child { max-width: 52%; line-height: 1.6; }
+  .dossier-footer > a { font-size: 12px; gap: 8px; white-space: nowrap; }
+  .footer { padding-block: 24px; font-size: 12px; gap: 13px; }
+}
+
+@media (max-width: 700px) and (max-height: 740px) {
+  .header { height: 60px; }
+  .hero { height: calc(100svh - 60px); --motion-bar: 128px; --view-bar: 98px; }
+  .hero-copy { top: 16px; }
+  .hero h1 { font-size: 36px; margin-top: 13px; margin-bottom: 8px; }
+  .hero-description { font-size: 12px; }
+  .hero .eyebrow { font-size: 9px; }
+  .scene { top: 94px; bottom: calc(var(--control-area) + 20px); }
+  .poster-type { font-size: clamp(70px, 22vw, 96px); bottom: calc(var(--control-area) + 18px); }
+  .hero > .motion-strip { padding-block: 6px; gap: 3px 8px; }
+  .controls { gap: 0; }
+  .utility-controls, .view-buttons button { padding-top: 0; }
+}
+
+@media (max-width: 360px) {
+  .identity > span { font-size: 29px; }
+  .identity svg { width: 23px; }
+  .identity { gap: 8px; }
+  nav { font-size: 11px; gap: 13px; }
+  .motion-feedback { gap: 7px; }
+  .motion-feedback .motion-indicator { max-width: 108px; }
+  .view-buttons button { padding-inline: 9px; }
+  .utility-controls { grid-template-columns: 1fr 1.35fr 32px 32px 43px; }
+  .utility-controls .square-button { width: 32px; }
+}

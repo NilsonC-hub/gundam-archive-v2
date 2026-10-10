@@ -1,0 +1,25 @@
+.hero { overflow: clip; }
+.motion-strip { gap: 24px; }
+.motion-buttons { flex-wrap: wrap; gap: 7px; }
+.motion-buttons button { min-height: 38px; white-space: nowrap; }
+.motion-buttons [data-motion="fire"].is-active { background: var(--red); border-color: var(--red); color: white; }
+.motion-buttons [data-motion="still"] { border-color: transparent; opacity: .75; }
+.motion-feedback { min-width: 156px; display: grid; justify-items: end; gap: 5px; }
+.motion-feedback .motion-indicator { display: block; line-height: 1.6; }
+.combat-sound { font: 10px var(--mono); letter-spacing: .03em; color: #d8dbd3; padding: 5px 0; border-bottom: 1px solid #6c7369; }
+.combat-sound:hover { color: var(--red); }
+.combat-sound[aria-pressed="false"] { opacity: .55; }
+#clear-impact { font-size: 10px; color: var(--ink); padding: 3px 0 3px 9px; border-left: 1px solid var(--rule); }
+#clear-impact:hover { color: var(--red); }
+@media (max-width: 900px) {
+  .motion-strip { gap: 15px; flex-wrap: wrap; }
+  .motion-feedback { flex-basis: 100%; display: flex; align-items: center; justify-content: space-between; min-height: 15px; }
+}
+@media (max-width: 700px) {
+  .stage-caption > span:nth-of-type(4) { display: none; }
+  .motion-strip { padding-block: 16px; }
+  .motion-title { flex-basis: 100%; }
+  .motion-buttons { justify-content: flex-start; flex-basis: 100%; }
+  .motion-buttons button { font-size: 10px; padding-inline: 10px; }
+  .motion-feedback .motion-indicator { font-size: 8px; }
+}

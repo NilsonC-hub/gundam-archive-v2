@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eeede8" />
+    <meta name="description" content="RX-79[G] 陆战型高达的交互机体档案。旋转机体、检视细节，进入第08MS小队的重力战线。" />
+    <title>RX-79[G] — 新版对照 / 08MS ARCHIVE</title>
+    <link rel="icon" type="image/svg+xml" href="/mark.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#controls">跳转到机体控制</a>
+    <header class="header">
+      <a class="identity" href="#top" aria-label="08MS 机体档案首页"><svg viewBox="0 0 36 32" aria-hidden="true"><path d="M2 1h9l7 15L25 1h9L18 32Z" fill="currentColor"/><path d="M1 18h8l9 14L27 18h8L18 32Z" fill="currentColor"/></svg><span>08<span class="identity-ms">MS</span><small>MOBILE SUIT ARCHIVE</small></span></a>
+      <span class="header-caption">地球联邦军 <span> / </span> 地面作战档案</span>
+      <nav aria-label="页面导航"><a class="nav-active" href="#top">机体检视</a><a href="#dossier">地面机库 <span>↗</span></a><a href="#chronicle">机体与战地档案 <span>↗</span></a></nav>
+    </header>
+    <main>
+      <section id="top" class="hero" aria-labelledby="hero-title">
+        <div class="red-cut" aria-hidden="true"><span>79</span></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="tiny-square"></span> RX-79[G] <span class="muted">/</span> 陸戦型ガンダム</p>
+          <h1 id="hero-title">为重力<br/>而生<span>。</span></h1>
+          <p class="hero-description">离开宇宙，踏入战场。<br/>一台为地面作战而生的高达。</p>
+        </div>
+        <div class="poster-type" aria-hidden="true"><span>GROUND</span><span>TYPE<span class="type-dot">.</span></span></div>
+        <div class="scene" id="scene" tabindex="0" role="img" aria-label="RX-79[G] 三维模型。拖动旋转；使用下方按钮切换视角、缩放或播放动作。">
+          <div class="loading" id="loading" role="status"><span class="loader-number" id="load-number">00</span><div><strong>机体接入中</strong><small>LOADING GROUND TYPE</small><div class="load-track"><i id="load-progress"></i></div></div></div>
+          <div class="load-error" id="load-error" hidden><strong>机体载入失败</strong><p>请重新载入以恢复机体检视。</p><button id="retry">重新载入 ↻</button></div>
+        </div>
+        <div class="side-label" aria-hidden="true"><span>RX-79[G]</span><i></i><span>GROUND TYPE / 08MS</span></div>
+        <div class="stage-caption"><span class="status-dot"></span><span id="stage-status">准备载入</span><span class="stage-caption-rule"></span><span>拖动机体 · 自由观察</span><button id="clear-impact" hidden>清除弹痕 ↺</button></div>
+        <div class="crosshair crosshair-a" aria-hidden="true">+</div><div class="crosshair crosshair-b" aria-hidden="true">+</div>
+        <section class="motion-strip" aria-label="动作预览">
+          <div class="motion-title"><span class="motion-line" aria-hidden="true"></span><span>机体动作 <small>MOTION STUDY</small></span></div>
+          <div class="motion-buttons" id="motion-buttons"><span class="motion-pending">正在读取模型动作…</span></div>
+          <div class="motion-feedback"><span class="motion-indicator" id="motion-state" role="status">STANDBY</span><button class="combat-sound" id="combat-sound" aria-pressed="true" title="切换射击与玻璃音效">音效 / 开</button></div>
+        </section>
+        <div class="controls" id="controls" aria-label="机体控制">
+          <div class="view-controls"><span class="control-heading">观察视角 <small>VIEW</small></span><div class="view-buttons"><button class="is-active" data-view="full" aria-pressed="true"><small>01</small> 整机</button><button data-view="head" aria-pressed="false"><small>02</small> 头部</button><button data-view="back" aria-pressed="false"><small>03</small> 背部</button></div></div>
+          <div class="utility-controls"><button id="wireframe" aria-pressed="false" title="切换线框"><span class="wire-icon">◇</span><span>线框</span></button><button id="rotate" aria-pressed="false"><span id="rotate-icon">↻</span><span id="rotate-label">自动旋转</span></button><span class="control-separator"></span><button id="zoom-out" class="square-button" aria-label="缩小">−</button><button id="zoom-in" class="square-button" aria-label="放大">＋</button><button id="reset" class="reset-button" aria-label="恢复默认视角" title="恢复默认视角">复位</button></div>
+        </div>
+      </section>
+      <section class="dossier" id="dossier" aria-labelledby="dossier-title">
+        <img class="hangar-image" src="/images/ground-hangar.png" alt="黑白地面机库概念场景，机库外是雾中的山林" loading="lazy" />
+        <div class="dossier-shade"></div>
+        <div class="dossier-heading"><p class="eyebrow">FIELD NOTES <span>/</span> THE 08TH MS TEAM</p><h2 id="dossier-title">宇宙之外，<br/>另一条战线。</h2><p>从机库到密林，陆战型高达将装甲、<br class="desktop-break"/>火力与机动性带入地面作战。</p><span class="image-note">地面机库 · 概念场景</span></div>
+        <div class="dossier-number" aria-hidden="true">08<span>MS TEAM</span></div>
+        <div class="dossier-footer"><span>RX-79[G] / GUNDAM GROUND TYPE</span><span>机体 · 战场 · 同伴</span><a href="#chronicle">进入战地档案 <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <section class="chronicle" id="chronicle" aria-labelledby="chronicle-title">
+        <div class="chronicle-identity">
+          <p class="eyebrow">FIELD ARCHIVE <span>/</span> U.C.0079</p>
+          <p class="chronicle-code">RX-79[G]</p>
+          <h2 id="chronicle-title">陆战型高达</h2>
+          <p class="chronicle-intro">从 RX-78 的余件走向亚洲战场。<br/>第08MS小队的战争，从这里展开。</p>
+          <dl class="unit-record"><div><dt>所属部队</dt><dd>地球联邦陆军 · 小岛大队</dd></div><div><dt>作战环境</dt><dd>地面 / 密林 / 山地</dd></div><div><dt>故事年代</dt><dd>宇宙世纪 0079 · 一年战争</dd></div></dl>
+        </div>
+        <div class="chronicle-content">
+          <div class="chapter-tabs" role="tablist" aria-label="战地档案章节">
+            <button id="tab-development" role="tab" aria-selected="true" aria-controls="chapter-development" tabindex="0"><small>01</small>开发</button>
+            <button id="tab-weapons" role="tab" aria-selected="false" aria-controls="chapter-weapons" tabindex="-1"><small>02</small>武装</button>
+            <button id="tab-series" role="tab" aria-selected="false" aria-controls="chapter-series" tabindex="-1"><small>03</small>作品</button>
+            <button id="tab-heroes" role="tab" aria-selected="false" aria-controls="chapter-heroes" tabindex="-1"><small>04</small>人物</button>
+            <button id="tab-team" role="tab" aria-selected="false" aria-controls="chapter-team" tabindex="-1"><small>05</small>小队</button>
+            <button id="tab-ending" role="tab" aria-selected="false" aria-controls="chapter-ending" tabindex="-1"><small>06</small>结局</button>
+          </div>
+          <div class="chapter-panel" id="chapter-development" role="tabpanel" aria-labelledby="tab-development" tabindex="0">
+            <p class="chapter-kicker">DEVELOPMENT / 地面战力的先行者</p>
+            <h3>由余件而生，为前线而战。</h3>
+            <p>联邦地面部队急需机动战士投入实战。RX-79[G] 利用 RX-78 开发过程中留下的余件组装，针对地面作战生产，是陆军早期投入前线的高性能机体。</p>
+            <div class="chapter-sequence"><div><span>RX-78</span><p>以高达系的余件为基础，满足前线迅速补充 MS 的需求。</p></div><div><span>RX-79[G]</span><p>作为陆战型高达，配备给小岛大队的多个 MS 小队。</p></div><div><span>Ez8</span><p>士郎的机体受损后，在前线改修为 RX-79[G]Ez-8。它是这台型号的后续改修机，外形与装备已有变化。</p></div></div>
+            <p class="chapter-reference">设定参考 <a href="https://gundam-official.com/mecha/wum8dg97o7fj0bxfga546xff" target="_blank" rel="noreferrer">陆战型高达 ↗</a><a href="https://gundam-official.com/mecha/nrmmno9rm1lf8rze83bgdt3e" target="_blank" rel="noreferrer">Ez8 ↗</a></p>
+          </div>
+          <div class="chapter-panel" id="chapter-weapons" role="tabpanel" aria-labelledby="tab-weapons" tabindex="0" hidden>
+            <p class="chapter-kicker">ARMAMENT / 任务决定装备</p>
+            <h3>从近身战，到远距离支援。</h3>
+            <dl class="weapon-record"><div><dt><strong>100<span>mm</span></strong>机枪</dt><dd>常用实弹武装，适合地面交战中的持续射击。</dd></div><div><dt><strong>180<span>mm</span></strong>加农炮</dt><dd>长身管支援武器，搭配背部武器货柜运输。</dd></div><div><dt>光束步枪</dt><dd>高威力射击武装；当前展示机体手持此类步枪。<a class="inspect-link" href="#top" data-inspect="rifle">检视机体步枪 <span aria-hidden="true">↑</span></a></dd></div><div><dt>光束军刀</dt><dd>近身格斗武器，收纳在腿部。</dd></div><div><dt>胸部武装</dt><dd>火神炮与多用途发射器，补充机体的近距离应对手段。</dd></div><div><dt>短盾</dt><dd>紧凑盾体，兼顾防护与地面行动。<a class="inspect-link" href="#top" data-inspect="shield">查看举盾防御 <span aria-hidden="true">↑</span></a></dd></div></dl>
+            <p class="chapter-reference">装备参考 <a href="https://gundam-official.com/mecha/wum8dg97o7fj0bxfga546xff" target="_blank" rel="noreferrer">机体设定 ↗</a><a href="https://www.bandaispirits.co.jp/products/search/detail.php?grp_id=5325&amp;prd_id=4549660240259000" target="_blank" rel="noreferrer">武装一览 ↗</a></p>
+          </div>
+          <div class="chapter-panel" id="chapter-series" role="tabpanel" aria-labelledby="tab-series" tabindex="0" hidden>
+            <p class="chapter-kicker">ON SCREEN / 一年战争的地面视角</p>
+            <h3>《机动战士高达<br/>第08MS小队》</h3>
+            <p>故事将视线投向东南亚前线。新任队长天田士郎与第08MS小队驾驶陆战型高达，在密林、村落和山地之间对抗吉翁军。</p>
+            <p>士郎与吉翁军女驾驶员爱娜·萨哈林在敌对阵营间建立了感情。随着阿普萨拉斯计划浮出水面，他开始面对军人职责、同伴安危与个人信念之间的冲突。</p>
+            <p class="chapter-caption">本档案以 OVA 动画的故事为准。</p>
+            <p class="chapter-reference">作品参考 <a href="https://gundam-official.com/series/08th-ms-team" target="_blank" rel="noreferrer">作品官网 ↗</a></p>
+          </div>
+          <div class="chapter-panel" id="chapter-heroes" role="tabpanel" aria-labelledby="tab-heroes" tabindex="0" hidden>
+            <p class="chapter-kicker">PEOPLE / 战线两侧的人</p>
+            <h3>士郎与爱娜。</h3>
+            <article class="person-entry"><span>E.F.F.</span><div><h4>天田士郎 <small>SHIRO AMADA</small></h4><p>第08MS小队队长。年轻、理想主义，重视队员的生命；他在前线逐渐理解战争的复杂，也拒绝仅凭所属阵营判断一个人。</p></div></article>
+            <article class="person-entry"><span>ZEON</span><div><h4>爱娜·萨哈林 <small>AINA SAHALIN</small></h4><p>吉翁军阿普萨拉斯的测试驾驶员，基尼亚斯·萨哈林的妹妹。她与士郎跨越敌我身份相互理解，并试图阻止哥哥不断升级的执念。</p></div></article>
+            <p class="chapter-reference">人物参考 <a href="https://gundam-official.com/character/w7nfsi0uf2hjiah52hcvt0y2" target="_blank" rel="noreferrer">士郎档案 ↗</a><a href="https://gundam-official.com/series/08th-ms-team" target="_blank" rel="noreferrer">作品人物档案 ↗</a></p>
+          </div>
+          <div class="chapter-panel" id="chapter-team" role="tabpanel" aria-labelledby="tab-team" tabindex="0" hidden>
+            <p class="chapter-kicker">THE 08TH MS TEAM / 五个人，一支小队</p>
+            <h3>战场上的命，交给彼此。</h3>
+            <dl class="team-record"><div><dt>天田士郎</dt><dd><span>队长 / MS 驾驶员</span>指挥小队，驾驶陆战型高达，后换乘改修后的 Ez8。</dd></div><div><dt>卡莲·约书亚</dt><dd><span>先任士官 / MS 驾驶员</span>经验丰富、判断直接，是小队的重要支柱。</dd></div><div><dt>泰利·桑德斯 Jr.</dt><dd><span>MS 驾驶员</span>被过往战斗的阴影困扰，在新同伴中重新建立信任。</dd></div><div><dt>艾蕾多亚·马西斯</dt><dd><span>气垫车驾驶 / 声呐</span>以听觉与探测设备支援战场情报。</dd></div><div><dt>米凯尔·尼诺里奇</dt><dd><span>气垫车驾驶 / 机枪</span>与艾蕾多亚共同执行支援任务，是小队年轻的一员。</dd></div></dl>
+            <p class="chapter-reference">编制参考 <a href="https://gundam-official.com/series/08th-ms-team" target="_blank" rel="noreferrer">第08MS小队档案 ↗</a></p>
+          </div>
+          <div class="chapter-panel" id="chapter-ending" role="tabpanel" aria-labelledby="tab-ending" tabindex="0" hidden>
+            <p class="chapter-kicker">AFTERMATH / OVA 剧情结局</p>
+            <h3>离开战场，选择活下去。</h3>
+            <p>故事后期，士郎驾驶的已经是由陆战型高达改修的 Ez8。他与爱娜共同面对阿普萨拉斯 III 和基尼亚斯，最终从决战中生还。</p>
+            <p>在后日谈《Last Resort》中，米凯尔与琪琪踏上寻找两人的旅途。故事最终揭示，士郎与爱娜在决战后活了下来，选择远离战场，相伴生活。</p>
+            <div class="aftermath-note"><span>RX-79[G] → Ez8</span><p>这里的结局属于驾驶员与后续改修机的故事；页面上方展示的仍是陆战型高达 RX-79[G]。</p></div>
+            <p class="chapter-reference">剧情参考 <a href="https://gundam-official.com/series/08th-ms-team/story/lnux4r9rd3zunlffdjp402or" target="_blank" rel="noreferrer">Last Resort ↗</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer"><span>08MS <b> / </b> INTERACTIVE ARCHIVE</span><span>Gundam 同人展示 · 非官方项目 · <a href="/audio/ATTRIBUTION.md" target="_blank" rel="noreferrer">声音来源 ↗</a></span><a href="#top">回到机体 ↑</a></footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

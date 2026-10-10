@@ -1,0 +1,17 @@
+/* A cool steel plane separates white armor from the paper without recoloring it. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 88px;
+  z-index: -3;
+  pointer-events: none;
+  background: linear-gradient(115deg, #c2cbc9, #a9b4b3);
+  clip-path: polygon(51% 0, 95% 0, 70% 100%, 25% 100%);
+}
+
+@media (max-width: 700px) {
+  .hero::before {
+    inset: 100px 0 145px;
+    clip-path: polygon(52% 0, 100% 0, 100% 100%, 2% 100%);
+  }
+}

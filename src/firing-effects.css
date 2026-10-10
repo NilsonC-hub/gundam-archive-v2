@@ -1,0 +1,17 @@
+.viewer-impact {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  contain: strict;
+}
+
+.viewer-impact.is-active {
+  opacity: 1;
+}
+
+@media print {
+  .viewer-impact { display: none; }
+}
